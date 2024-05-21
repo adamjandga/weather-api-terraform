@@ -37,14 +37,6 @@ module "eks" {
   }
 }
 
-output "cluster_endpoint" {
-  value = module.eks.cluster_endpoint
-}
-
-output "kubeconfig" {
-  value = module.eks.kubeconfig
-}
-
 output "repository_url" {
   value = aws_ecr_repository.weather_app.repository_url
 }
