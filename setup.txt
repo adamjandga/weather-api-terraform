@@ -1,4 +1,4 @@
-eksctl create cluster --name weather-app --region us-east-1 --nodegroup-name weather-app-nodes --node-type t2.micro --nodes 1 --nodes-min 1 --nodes-max 10
+eksctl create cluster --name weather-app --region us-east-1 --nodegroup-name weather-app-nodes --node-type t2.medium --nodes 1 --nodes-min 1 --nodes-max 10
 
 aws ecr create-repository --repository-name weather-app --region us-east-1
 
