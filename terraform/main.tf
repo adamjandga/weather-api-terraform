@@ -11,9 +11,9 @@ module "eks" {
   cluster_name    = "weather-app"
   cluster_version = "1.21"
   
-  # Replace these with your actual VPC ID and subnet IDs
-  vpc_id          = "vpc-12345678"
-  subnets         = ["subnet-12345678", "subnet-23456789"]
+  # Replace with your actual VPC ID and subnet IDs
+  vpc_id          = "vpc-0170b8d55652ec6f9"
+  subnets         = ["subnet-0dd3c9084fffd80b7", "subnet-071b6572fe6bde046"]
 
   node_groups = {
     weather_app_nodes = {
