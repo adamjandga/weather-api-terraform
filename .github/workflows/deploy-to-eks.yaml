@@ -24,11 +24,15 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: terraform init
+      run: |
+        cd terraform
+        terraform init
 
     - name: Terraform Apply
       id: tf_apply
-      run: terraform apply -auto-approve
+      run: |
+        cd terraform
+        terraform apply -auto-approve
 
     - name: Login to Amazon ECR
       id: login-ecr
@@ -36,7 +40,7 @@ jobs:
 
     - name: Build, tag, and push docker image to Amazon ECR
       env:
-        REGISTRY: ${{ steps.tf_apply.outputs.repository_url }}
+        REGISTRY: ${{ steps.tf_apply.outputs.repository_url.value }}
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $REGISTRY:$IMAGE_TAG .
