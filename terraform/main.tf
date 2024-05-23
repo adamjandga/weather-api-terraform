@@ -174,15 +174,3 @@ resource "aws_eks_node_group" "main" {
     aws_iam_role_policy_attachment.ec2_read_only,
   ]
 }
-
-output "cluster_endpoint" {
-  value = aws_eks_cluster.main.endpoint
-}
-
-output "kubeconfig" {
-  value = aws_eks_cluster.main.kubeconfig
-}
-
-output "repository_url" {
-  value = aws_ecr_repository.weather_app.repository_url
-}
